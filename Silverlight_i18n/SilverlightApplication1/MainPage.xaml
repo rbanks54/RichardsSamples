@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="SilverlightApplication1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Height="30" Click="Button_Click" Content="{Binding Path=ApplicationStrings.ButtonText, Source={StaticResource LocalizedStrings}}"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Height="40" Text="{Binding StringValue}" />
+      <StackPanel Grid.Row="1">
+            <RadioButton>Option 1</RadioButton>
+            <RadioButton>Option 2</RadioButton>
+        </StackPanel>
+        <ComboBox Grid.Row="1" Grid.Column="1" Height="40">
+            <ComboBoxItem Content="{Binding Path=ApplicationStrings.Yo, Source={StaticResource LocalizedStrings}}"/>
+            <ComboBoxItem Content="{Binding Path=ApplicationStrings.combo2, Source={StaticResource LocalizedStrings}}"/>
+            <ComboBoxItem>Item 3</ComboBoxItem>
+        </ComboBox>
+    </Grid>
+</UserControl>
